@@ -102,7 +102,7 @@ metadata:
   name: database-secrets
 type: Opaque
 stringData:
-  postgres-db: "tech_challenge"
+  postgres-db: "registrations"
   postgres-user: "postgres"
   postgres-password: "postgres"
   pg-user: "postgres"
