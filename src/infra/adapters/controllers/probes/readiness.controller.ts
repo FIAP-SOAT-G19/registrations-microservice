@@ -1,4 +1,3 @@
-
 import { IController } from '@/application/interfaces'
 import { HttpRequest, HttpResponse } from '@/infra/shared'
 

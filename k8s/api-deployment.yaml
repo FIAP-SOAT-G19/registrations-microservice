@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: devrsilva/tech-challenge:latest
+          image: rodrigodossantos/registrations-ms:v2
           resources:
             limits:
               memory: "512Mi"
@@ -91,11 +91,13 @@ metadata:
   name: api-secrets
 type: Opaque
 stringData:
-  postgres-db: tech_challenge
+  postgres-db: registrations
   postgres-user: postgres
   postgres-password: postgres
-  postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
-  database-url: postgresql://postgres:postgres@dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
+  postgres-host: database-svc
+  database-url: postgresql://postgres:postgres@database-svc/tech_challenge?schema=public
+  # postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
+  # database-url: postgresql://postgres:postgres@dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
 ---
 apiVersion: v1
 kind: Service
