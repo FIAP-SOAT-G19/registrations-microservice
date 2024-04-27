@@ -31,7 +31,7 @@ export class CreateClientUseCase implements ICreateClientUseCase {
 
     const validation = this.schemaValidator.validate({ schema: constants.SCHEMAS.CLIENT, data: input })
     if (validation?.error) {
-      throw new InvalidParamError(validation.error)
+      throw new InvalidParamError(String(validation.error))
     }
   }
 }
