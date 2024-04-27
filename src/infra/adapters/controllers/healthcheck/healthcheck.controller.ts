@@ -1,4 +1,3 @@
-
 import { IController } from '@/application/interfaces'
 import { HttpRequest, HttpResponse, handleError } from '@/infra/shared'
 import { Pool } from 'pg'

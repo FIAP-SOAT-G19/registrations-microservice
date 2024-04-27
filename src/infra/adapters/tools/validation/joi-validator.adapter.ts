@@ -1,4 +1,3 @@
-
 import { ISchemaValidator } from '@/application/interfaces'
 import * as schemas from './schemas'
 

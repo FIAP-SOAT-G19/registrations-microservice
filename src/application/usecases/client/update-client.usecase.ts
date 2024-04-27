@@ -34,7 +34,7 @@ export class UpdateClientUseCase implements IUpdateClientUseCase {
       data: { name: input.name, email: input.email, cpf: input.cpf }
     })
     if (validation?.error) {
-      throw new InvalidParamError(validation.error)
+      throw new InvalidParamError(String(validation.error))
     }
   }
 }
