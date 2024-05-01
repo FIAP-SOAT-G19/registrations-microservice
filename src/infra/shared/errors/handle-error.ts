@@ -10,5 +10,6 @@ export const handleError = (error: any): HttpResponse => {
   if (error instanceof ClientNotFoundError || error instanceof ProductNotFoundError) {
     return notFound(error)
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   return serverError(error)
 }

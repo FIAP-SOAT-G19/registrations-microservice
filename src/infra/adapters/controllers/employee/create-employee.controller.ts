@@ -1,6 +1,6 @@
 import { IController } from '@/application/interfaces'
 import { CreateEmployeeUseCase } from '@/application/usecases/employee/create-employee.usecase'
-import { HttpRequest, HttpResponse, success, handleError } from '@/infra/shared'
+import { HttpRequest, HttpResponse, success, handleError } from '../../../shared'
 
 export class CreateEmployeeController implements IController {
   constructor(private readonly createEmployeeUseCase: CreateEmployeeUseCase) {}

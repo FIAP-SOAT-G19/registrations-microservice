@@ -1,18 +1,16 @@
 import { IEmployeeRepository, SaveEmployeeInput, FindEmployeeOutput } from '@/application/interfaces/repositories/employee.interface'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { prismaClient } from '@/infra/database/prisma-client'
 
 export class EmployeeRepository implements IEmployeeRepository {
   async create (input: SaveEmployeeInput): Promise<string> {
-    const employee = await prisma.employee.create({
+    const employee = await prismaClient.employee.create({
       data: input
     })
     return employee.id
   }
 
   async findAll (): Promise<FindEmployeeOutput[]> {
-    const employees = await prisma.employee.findMany({
+    const employees = await prismaClient.employee.findMany({
       where: {
         deletedAt: null
       }
@@ -30,7 +28,7 @@ export class EmployeeRepository implements IEmployeeRepository {
   }
 
   async findById (id: string): Promise<FindEmployeeOutput | null> {
-    const employee = await prisma.employee.findUnique({
+    const employee = await prismaClient.employee.findUnique({
       where: {
         id,
         deletedAt: null
@@ -50,7 +48,7 @@ export class EmployeeRepository implements IEmployeeRepository {
   }
 
   async findByEmail (email: string): Promise<FindEmployeeOutput | null> {
-    const employee = await prisma.employee.findFirst({
+    const employee = await prismaClient.employee.findFirst({
       where: { email }
     })
     if (!employee) return null
@@ -58,7 +56,7 @@ export class EmployeeRepository implements IEmployeeRepository {
   }
 
   async findByCpf (cpf: string): Promise<FindEmployeeOutput | null> {
-    const employee = await prisma.employee.findFirst({
+    const employee = await prismaClient.employee.findFirst({
       where: { cpf }
     })
     if (!employee) return null
@@ -66,7 +64,7 @@ export class EmployeeRepository implements IEmployeeRepository {
   }
 
   async update (input: SaveEmployeeInput): Promise<string> {
-    const employee = await prisma.employee.update({
+    const employee = await prismaClient.employee.update({
       where: { id: input.id },
       data: input
     })
@@ -74,7 +72,7 @@ export class EmployeeRepository implements IEmployeeRepository {
   }
 
   async delete (employee: SaveEmployeeInput): Promise<void> {
-    await prisma.employee.update({
+    await prismaClient.employee.update({
       where: { id: employee.id },
       data: {
         deletedAt: new Date()

@@ -1,6 +1,6 @@
 import { IController } from '@/application/interfaces'
 import { ICreateClientUseCase } from '@/application/interfaces/usecases/client/create-client.interface'
-import { HttpRequest, HttpResponse, success, handleError } from '@/infra/shared'
+import { HttpRequest, HttpResponse, success, handleError } from '../../../shared'
 
 export class CreateClientController implements IController {
   constructor(private readonly createClientUseCase: ICreateClientUseCase) { }
