@@ -28,7 +28,18 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 ---
 
 ## Arquitetura do projeto
-![Arquitetura do Projeto](./assets/images/architecture.jpg)
+![Arquitetura do Projeto](./assets/images/arch-ms.jpeg)
+
+## 🧪 Testes:
+- Evidência cobertura de testes unitários
+![Arquitetura do Projeto](./assets/images/unit-test.png)
+
+- Evidência teste BDD
+![Arquitetura do Projeto](./assets/images/BDD-registrations.png)
+  ```bash
+  npm run test:bdd
+  ```
+---
 
 ## ▶️ Executando o projeto
 - Execute os seguintes comandos:
@@ -53,16 +64,9 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 
 ---
 
-## ▶️ Vídeo do Projeto
-Link do vídeo no [Youtube](https://youtu.be/TDvxi906vco?si=yY3aulSxq2tg5fiC)
+<!-- ## ▶️ Vídeo do Projeto
+Link do vídeo no [Youtube](https://youtu.be/TDvxi906vco?si=yY3aulSxq2tg5fiC) -->
 
----
-
-## 🧪 Testes:
-- Rodar todos os testes
-  ```bash
-  npm t
-  ```
 ---
 
 ## 🚀 Commits no projeto
