@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: api-registrations-deployment
 spec:
   selector:
     matchLabels:
-      app: api
+      app: api-registrations
   template:
     metadata:
       labels:
-        app: api
+        app: api-registrations
     spec:
       containers:
-        - name: api
+        - name: api-registrations
           image: devrsilva/registrations-microservice
           resources:
             limits:
@@ -74,7 +74,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: api-deployment
+    name: api-registrations-deployment
   minReplicas: 1
   maxReplicas: 10
   metrics:
@@ -97,15 +97,15 @@ stringData:
   postgres-host: registration.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
   # database-url: postgresql://postgres:postgres@database-svc/tech_challenge?schema=public
   # postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
-  database-url: postgresql://postgres:postgres@registration.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
+  database-url: postgresql://postgres:postgres@registration.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/registrations?schema=public
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-svc
+  name: api-registrations-svc
 spec:
   selector:
-    app: api
+    app: api-registrations
   ports:
     - protocol: TCP
       port: 3004

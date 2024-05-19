@@ -18,8 +18,7 @@
     "test:watch": "npm t -- --watch",
     "test:staged": "npm t -- --findRelatedTests",
     "test:coverage": "npm t -- --coverage",
-    "test:bdd": "cucumber-js",
-    "postinstall": "npm rebuild bcrypt --build-from-source"
+    "test:bdd": "cucumber-js"
   },
   "repository": {
     "type": "git",
