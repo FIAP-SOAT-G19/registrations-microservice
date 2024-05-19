@@ -24,7 +24,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /api/v1/livenessProbe
-              port: 3000
+              port: 3004
             initialDelaySeconds: 15
             periodSeconds: 10
             successThreshold: 1
@@ -33,7 +33,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /api/v1/readinessProbe
-              port: 3000
+              port: 3004
             initialDelaySeconds: 15
             periodSeconds: 10
             successThreshold: 1
@@ -94,10 +94,10 @@ stringData:
   postgres-db: registrations
   postgres-user: postgres
   postgres-password: postgres
-  postgres-host: database-svc
-  database-url: postgresql://postgres:postgres@database-svc/tech_challenge?schema=public
+  postgres-host: registration.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
+  # database-url: postgresql://postgres:postgres@database-svc/tech_challenge?schema=public
   # postgres-host: dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com
-  # database-url: postgresql://postgres:postgres@dbpostgres.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
+  database-url: postgresql://postgres:postgres@registration.czg2ea2yu0rz.us-east-1.rds.amazonaws.com:5432/dbpostgres?schema=public
 ---
 apiVersion: v1
 kind: Service
@@ -108,7 +108,7 @@ spec:
     app: api
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
-      nodePort: 30000
+      port: 3004
+      targetPort: 3004
+      nodePort: 30004
   type: LoadBalancer
