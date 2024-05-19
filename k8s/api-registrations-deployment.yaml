@@ -12,7 +12,7 @@ spec:
         app: api-registrations
     spec:
       containers:
-        - name: api-registrations
+        - name: api-registrations-deployment
           image: devrsilva/registrations-microservice
           resources:
             limits:
