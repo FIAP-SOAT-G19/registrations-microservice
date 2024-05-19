@@ -44,7 +44,6 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 ## ▶️ Executando o projeto
 - Execute os seguintes comandos:
   ```bash
-    kubectl apply -f k8s/db-registrations-deployment.yaml
     kubectl apply -f k8s/api-registrations-deployment.yaml
     kubectl apply -f k8s/metrics.yaml
   ```
