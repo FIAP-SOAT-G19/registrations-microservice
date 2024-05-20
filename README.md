@@ -1,4 +1,4 @@
-# 💬 Registrations Microservice
+# 💬 Tech Challenge - Microsserviço de Cadastros
 
 ## ✳️ Sobre
 O **Tech Challenge** é um projeto de um sistema de autoatendimento de fast food, que é composto por uma série de dispositivos e interfaces que permitem aos clientes selecionar e fazer pedidos sem precisar interagir com um atendente.
@@ -51,7 +51,6 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
 - Utilize os comandos abaixo para encaminhar as conexões das portas locais para a portas dos pod's Kubernetes (o segundo comando é opcional)
   ```bash
     kubectl port-forward service/api-registrations-svc 3000:3004 &
-    kubectl port-forward service/database-svc 5432:5432 &
   ```
 
 - O Backend iniciará em [http://localhost:3000](http://localhost:3000)
