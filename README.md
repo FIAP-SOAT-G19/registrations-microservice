@@ -48,7 +48,7 @@ Existe o arquivo `.env.example` com todas as variáveis utilizadas para rodar o 
     kubectl apply -f k8s/metrics.yaml
   ```
 
-- Utilize os comandos abaixo para encaminhar as conexões das portas locais para a portas dos pod's Kubernetes (o segundo comando é opcional)
+- Utilize os comandos abaixo para encaminhar as conexões das portas locais para a portas dos pod's Kubernetes (o segundo comando é opcional).
   ```bash
     kubectl port-forward service/api-registrations-svc 3000:3004 &
   ```
